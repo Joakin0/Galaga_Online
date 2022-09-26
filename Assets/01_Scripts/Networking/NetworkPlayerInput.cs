@@ -9,7 +9,7 @@ public class NetworkPlayerInput : MonoBehaviour
     Quaternion cameraRotation;
     Vector3 directionShoot;
     NetworkPlayerController thisController;
-    private Vector3 movPosition;
+    private Vector2 movDirection;
     public Transform worldRefence;
 
    
@@ -24,21 +24,28 @@ public class NetworkPlayerInput : MonoBehaviour
     {
 
     }
-    
+    private void Update()
+    {
+        movDirection.x = Input.GetAxis("Horizontal");
+    }
+
     private void OnTriggerEnter(Collider other)
     {
        
     }
     public PlayerInput GetInput()
     {
+
+
+
         PlayerInput temp = new PlayerInput();
-        temp.movDirection = movPosition;
+        temp.movDirection = movDirection;
         temp.actPosition = transform.position;
-        
+       
 
-
-        
         return temp;
+
+
 
     }
 

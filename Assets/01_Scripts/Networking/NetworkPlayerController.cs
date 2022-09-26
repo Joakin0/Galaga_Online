@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class NetworkPlayerController : NetworkBehaviour
 {
-    private Rigidbody rb;
+    private Rigidbody2D rb;
     public float speed;
    
     
@@ -18,16 +18,11 @@ public class NetworkPlayerController : NetworkBehaviour
     public override void FixedUpdateNetwork()
     {
         if (rb == null)
-            rb = GetComponent<Rigidbody>();
+            rb = GetComponent<Rigidbody2D>();
 
         if(GetInput(out PlayerInput input))
         {
             rb.MovePosition(input.actPosition += input.movDirection * speed * Runner.DeltaTime);
-
-            
-
-
-            
             
 
 
