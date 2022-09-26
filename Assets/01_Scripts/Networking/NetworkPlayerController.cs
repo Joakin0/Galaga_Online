@@ -24,13 +24,10 @@ public class NetworkPlayerController : NetworkBehaviour
         {
             rb.MovePosition(input.actPosition += input.movDirection * speed * Runner.DeltaTime);
 
-            transform.rotation = Quaternion.Euler(0, input.cameraRotation.eulerAngles.y, 0);
+            
 
 
-            if (input.goJail)
-            {
-                rb.MovePosition(GameManager.current.JailPoscition);
-            }
+            
             
 
 

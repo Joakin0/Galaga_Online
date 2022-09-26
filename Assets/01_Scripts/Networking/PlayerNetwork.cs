@@ -37,23 +37,8 @@ public class PlayerNetwork : NetworkBehaviour
         {
             
         }
-        if(GameManager.current.numberOfPlayer%2 == 0)
-        {
-            team = 2;
-            GameManager.current.numberOfPlayer++;
-            player.GetComponent<Renderer>().material.color = Color.red;
-           
-           
-           
-        }
-        else
-        {
-            team = 1;
-            GameManager.current.numberOfPlayer++;
-            player.GetComponent<Renderer>().material.color = Color.blue;
-            
-           
-        }
+       
+          
 
     }
 
